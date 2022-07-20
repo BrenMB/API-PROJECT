@@ -1,18 +1,25 @@
 const router = require('express').Router()
 
+const { checkAuth } = require('../utils')
+
 const {
   createClient,
+  login,
   viewClients,
   viewSpecificClient,
   updateClient,
-  deleteClient
-
+  deleteClient,
+  viewMyReservations,
+  createReservation,
 } = require('../controllers/clientController')
 
 router
+  .get('/', checkAuth,  viewClients)
   .post('/', createClient)
-  .get('/', viewClients)
+  .post('/login', login)
   .get('/:clientId', viewSpecificClient)
+  .get('/:clientId/reservations', viewMyReservations)
+  .post('/:clientId/reservations', createReservation)
   .put('/:clientId', updateClient)
   .delete('/:clientId', deleteClient)
 

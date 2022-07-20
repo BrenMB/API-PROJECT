@@ -54,10 +54,6 @@ METHOD  | ENDPOINT                         | ROL                  | TOKEN | DESC
 --------|----------------------------------|----------------------|-------|------------------------------------|---------------------------|--------------------
 GET     | /api/tables                      |Admin                 | Yes   | View list of tables                |                           | List of tables information
 GET     | /api/tables/:tableId             |Admin                 | Yes   | View specific table                | tableId                   | Specific table information
-GET     | /api/restaurants/profile         |Admin,Employee        | Yes   | View own restaurant information    |                           | Restaurant information
-PUT     | /api/restaurants/profile         |Admin,Employee        | Yes   | Update own restaurant information  |                           | Updated information
-PUT     | /api/restaurants/:restaurantId   |Admin                 | Yes   | Update specific restaurant         | tableId              | Updated specific restaurant information
-DELETE  | /api/restaurants/:restaurantId   |Admin                 | Yes   | Delete specific restaurant         | tableId              | Delete specific restaurant information
 
 ### Reservations Endpoints
 
@@ -68,9 +64,14 @@ GET     | /api/reservations/:reservationId |Admin                 | Yes   | View
 
 
 
+### Restaurants
+ Endpoints
 
+METHOD  | ENDPOINT                         | ROL                  | TOKEN | DESCRIPTION                        | POST PARAMS REQUIRED      | RETURNS
+--------|----------------------------------|----------------------|-------|------------------------------------|---------------------------|--------------------
 GET     | /api/restaurants/profile         |Admin,Employee        | Yes   | View own restaurant information    |                           | Restaurant information
 PUT     | /api/restaurants/profile         |Admin,Employee        | Yes   | Update own restaurant information  |                           | Updated information
 PUT     | /api/restaurants/:restaurantId   |Admin                 | Yes   | Update specific restaurant         | restaurantId              | Updated specific restaurant information
 DELETE  | /api/restaurants/:restaurantId   |Admin                 | Yes   | Delete specific restaurant         | restaurantId              | Delete specific restaurant information
 DELETE  | /api/restaurants/profile         |Admin,Employee        | Yes   | Delete own restaurant              |                           | Delete own restaurant 
+

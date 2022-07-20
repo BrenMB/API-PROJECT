@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const clientSchema = new mongoose.Schema({
+
   name: {
     type: String,
     required: true
@@ -19,7 +20,17 @@ const clientSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true
+  },
+  reservations: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'reservation'
+  }],
+  role : {
+    type: String,
+    enum: ['admin', 'client'],
+    default: 'client'
   }
+  
 })
 
 const clientModel = mongoose.model('client', clientSchema)
